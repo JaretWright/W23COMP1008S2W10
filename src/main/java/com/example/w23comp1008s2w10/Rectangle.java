@@ -13,7 +13,10 @@ public class Rectangle {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        if (height>0)
+            this.height = height;
+        else
+            throw new IllegalArgumentException("height must be greater than 0");
     }
 
     public double getWidth() {
@@ -21,12 +24,20 @@ public class Rectangle {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if (width>0)
+            this.width = width;
+        else
+            throw new IllegalArgumentException("Width must be greater than 0");
     }
 
     public double getArea()
     {
         //rectangle is 20 x 30, so area should be 600
         return width * height;
+    }
+
+    public double getPerimeter()
+    {
+        return 2*width + 2* height;
     }
 }
